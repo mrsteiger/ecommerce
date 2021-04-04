@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-4": {
-            "": "vendor\\mrsteiger\\php-classes\\src"
+            "Mrsteiger\\": "vendor\\mrsteiger\\php-classes\\src"
         }
     }
 }

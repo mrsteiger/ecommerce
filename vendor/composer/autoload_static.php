@@ -6,8 +6,18 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitcdb3957be0f2a321113b8056725b8a3c
 {
-    public static $fallbackDirsPsr4 = array (
-        0 => __DIR__ . '/..' . '/mrsteiger/php-classes/src',
+    public static $prefixLengthsPsr4 = array (
+        'M' => 
+        array (
+            'Mrsteiger\\' => 10,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'Mrsteiger\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mrsteiger/php-classes/src',
+        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -41,7 +51,8 @@ class ComposerStaticInitcdb3957be0f2a321113b8056725b8a3c
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->fallbackDirsPsr4 = ComposerStaticInitcdb3957be0f2a321113b8056725b8a3c::$fallbackDirsPsr4;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitcdb3957be0f2a321113b8056725b8a3c::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitcdb3957be0f2a321113b8056725b8a3c::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInitcdb3957be0f2a321113b8056725b8a3c::$prefixesPsr0;
             $loader->classMap = ComposerStaticInitcdb3957be0f2a321113b8056725b8a3c::$classMap;
 
