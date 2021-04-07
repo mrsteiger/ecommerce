@@ -1,28 +1,19 @@
 <?php 
 
+session_start();
 require_once("vendor/autoload.php");
 
 use \Slim\Slim;
-use \Mrsteiger\Page;
-use \Mrsteiger\PageAdmin;
 
 $app = new Slim();
 
 $app->config('debug', true);
 
-$app->get('/', function() {
-    
-	$page = new Page();
-
-	$page->setTpl("index");
-});
-
-$app->get('/admin', function() {
-    
-	$page = new PageAdmin();
-
-	$page->setTpl("index");
-});
+require_once("site.php");
+require_once("admin.php");
+require_once("admin-users.php");
+require_once("admin-categories.php");
+require_once("admin-products.php");
 
 $app->run();
 
